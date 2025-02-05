@@ -27,6 +27,11 @@ train.fillna({'Embarked':train['Embarked'].mode()[0]},inplace=True)
 sns.set()
 # sns.countplot(x="Survived",data=train)
 # sns.countplot(x="Embarked",data=train)
-sns.countplot(x='Embarked',hue='Survived',data=train)
+# sns.countplot(x='Embarked',hue='Survived',data=train)
+
+pivot_table = train.pivot_table(index="Pclass", columns="Embarked", values="Survived", aggfunc="mean")
+
+sns.heatmap(pivot_table, annot=True, cmap="Blues")
+plt.title("Survival Rate by Class & Embarkation Point")
 plt.show()
 
