@@ -32,6 +32,6 @@ sns.set()
 pivot_table = train.pivot_table(index="Pclass", columns="Embarked", values="Survived", aggfunc="mean")
 
 sns.heatmap(pivot_table, annot=True, cmap="Blues")
-# plt.title("Survival Rate by Class & Embarkation Point")
+plt.title("Survival Rate by Class & Embarkation Point")
 plt.show()
 
