@@ -29,9 +29,16 @@ sns.set()
 # sns.countplot(x="Embarked",data=train)
 # sns.countplot(x='Embarked',hue='Survived',data=train)
 
-pivot_table = train.pivot_table(index="Pclass", columns="Embarked", values="Survived", aggfunc="mean")
 
-sns.heatmap(pivot_table, annot=True, cmap="Blues")
-#plt.title("Survival Rate by Class & Embarkation Point")
-plt.show()
+# sns.countplot(x='Embarked',hue='Survived',data=train)
+# plt.show()
+
+
+# sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolwarm")
+# plt.show()
+
+import plotly.express as px
+
+fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
+fig.show()
 
