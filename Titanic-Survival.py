@@ -1,6 +1,7 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
+import plotly.express as px
 
 train = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
 test = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
@@ -37,7 +38,7 @@ sns.set()
 # sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolwarm")
 # plt.show()
 
-import plotly.express as px
+
 
 fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
 fig.show()
