@@ -26,22 +26,22 @@ train.fillna({'Embarked':train['Embarked'].mode()[0]},inplace=True)
 # print(train['Survived'].value_counts())
 
 sns.set()
-# sns.countplot(x="Survived",data=train)
-# sns.countplot(x="Embarked",data=train)
-# sns.countplot(x='Embarked',hue='Survived',data=train)
+sns.countplot(x="Survived",data=train)
+sns.countplot(x="Embarked",data=train)
+sns.countplot(x='Embarked',hue='Survived',data=train)
 
 
-# sns.countplot(x='Embarked',hue='Survived',data=train)
-# plt.show()
+sns.countplot(x='Embarked',hue='Survived',data=train)
+plt.show()
 
 
-# sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolwarm")
-# plt.show()
+sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolwarm")
+plt.show()
 
 
 
-# fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
-# fig.show()
+fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
+fig.show()
 
 train.replace({"Sex": {"male": 0, "female": 1}, "Embarked": {"S": 0, "C": 1, "Q": 2}}, inplace=True)
 print(train.head())
