@@ -32,17 +32,17 @@ sns.countplot(x='Embarked',hue='Survived',data=train)
 
 
 sns.countplot(x='Embarked',hue='Survived',data=train)
-plt.show()
+# plt.show()
 
 
 sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolwarm")
-plt.show()
+# plt.show()
 
 
 
 fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
-fig.show()
+# fig.show()
 
 train.replace({"Sex": {"male": 0, "female": 1}, "Embarked": {"S": 0, "C": 1, "Q": 2}}, inplace=True)
-print(train.head())
+# print(train.head())
 
