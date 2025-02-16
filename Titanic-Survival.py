@@ -1,7 +1,8 @@
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
-import plotly.express as px
+from sklearn.model_selection import train_test_split
+# import plotly.express as px
 
 train = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
 test = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
@@ -40,9 +41,18 @@ sns.pairplot(train, vars=['Fare'],hue='Survived', diag_kind="kde",palette="coolw
 
 
 
-fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
+# fig = px.scatter(train, x="Age", y="Fare", color="Survived", title="Age vs Fare Scatter Plot")
 # fig.show()
+
+# print(train['Sex'].value_counts())
+# print(train['Embarked'].value_counts())
 
 train.replace({"Sex": {"male": 0, "female": 1}, "Embarked": {"S": 0, "C": 1, "Q": 2}}, inplace=True)
 # print(train.head())
+
+x = train.drop(columns = ["PassengerId", "Name", "Ticket", "Survived"], axis=1)
+y = train["Survived"]
+
+x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=0.2, random_state=2)
+
 
