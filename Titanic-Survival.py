@@ -2,6 +2,7 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
 # import plotly.express as px
 
 train = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
@@ -55,4 +56,5 @@ y = train["Survived"]
 
 x_train, x_test, y_train, y_test = train_test_split(x,y, test_size=0.2, random_state=2)
 
-
+model1_LR = LogisticRegression(max_iter=1000)
+model1_LR.fit(x_train, y_train)
