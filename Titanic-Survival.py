@@ -15,6 +15,7 @@ from lightgbm import LGBMClassifier
 from sklearn.svm import SVC
 from catboost import CatBoostClassifier
 from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import ExtraTreesClassifier
 # import plotly.express as px
 
 train = pd.read_csv('D:\\Sem6\\ML-Projects\\train.csv')
@@ -149,3 +150,10 @@ model11_ABC.fit(x_train, y_train)
 x_train_pred_11 = model11_ABC.predict(x_train)
 train_data_accuracy_11 = accuracy_score(y_train, x_train_pred_11)
 # print(f"Accuracy score is: {train_data_accuracy_11 * 100:.2f}%")
+
+model12_ETC = ExtraTreesClassifier(n_estimators=100)
+model12_ETC.fit(x_train, y_train)
+
+x_train_pred_12 = model12_ETC.predict(x_train)
+train_data_accuracy_12 = accuracy_score(y_train, x_train_pred_12)
+# print(f"Accuracy score is: {train_data_accuracy_12 * 100:.2f}%")
