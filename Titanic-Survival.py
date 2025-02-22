@@ -156,4 +156,4 @@ model12_ETC.fit(x_train, y_train)
 
 x_train_pred_12 = model12_ETC.predict(x_train)
 train_data_accuracy_12 = accuracy_score(y_train, x_train_pred_12)
-# print(f"Accuracy score is: {train_data_accuracy_12 * 100:.2f}%")
+print(f"Accuracy score is: {train_data_accuracy_12 * 100:.2f}%")
