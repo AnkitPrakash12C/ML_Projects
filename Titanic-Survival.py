@@ -158,6 +158,15 @@ x_train_pred_12 = model12_ETC.predict(x_train)
 train_data_accuracy_12 = accuracy_score(y_train, x_train_pred_12)
 print(f"Accuracy score is: {train_data_accuracy_12 * 100:.2f}%")
 
+test = test.drop(columns='Cabin', axis=1)
+test.fillna({'Age': test['Age'].mean()}, inplace=True)
+test.fillna({'Embarked': test['Embarked'].mode()[0]}, inplace=True)
+test.fillna({'Fare': test['Fare'].mean()}, inplace=True)
+
+test.replace({"Sex": {"male": 0, "female": 1}, "Embarked": {"S": 0, "C": 1, "Q": 2}}, inplace=True)
+
+x_test = test.drop(columns=["PassengerId", "Name", "Ticket"], axis=1)
+
 x_test_pred_1 = model1_LR.predict(x_test)
 test_data_accuracy_1 = accuracy_score(y_test, x_test_pred_1)
 print(f"Test Accuracy score is: {test_data_accuracy_1 * 100:.2f}%")
