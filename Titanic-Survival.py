@@ -157,3 +157,51 @@ model12_ETC.fit(x_train, y_train)
 x_train_pred_12 = model12_ETC.predict(x_train)
 train_data_accuracy_12 = accuracy_score(y_train, x_train_pred_12)
 print(f"Accuracy score is: {train_data_accuracy_12 * 100:.2f}%")
+
+x_test_pred_1 = model1_LR.predict(x_test)
+test_data_accuracy_1 = accuracy_score(y_test, x_test_pred_1)
+print(f"Test Accuracy score is: {test_data_accuracy_1 * 100:.2f}%")
+
+x_test_pred_2 = model2_KNC.predict(x_test)
+test_data_accuracy_2 = accuracy_score(y_test, x_test_pred_2)
+# print(f"Test Accuracy score is: {test_data_accuracy_2 * 100:.2f}%")
+
+x_test_pred_3 = model3_DT.predict(x_test)
+test_data_accuracy_3 = accuracy_score(y_test, x_test_pred_3)
+# print(f"Test Accuracy score is: {test_data_accuracy_3 * 100:.2f}%")
+
+x_test_pred_4 = model4_RFC.predict(x_test)
+test_data_accuracy_4 = accuracy_score(y_test, x_test_pred_4)
+# print(f"Test Accuracy score is: {test_data_accuracy_4 * 100:.2f}%")
+
+x_test_pred_5 = model5_SVC.predict(x_test)
+test_data_accuracy_5 = accuracy_score(y_test, x_test_pred_5)
+# print(f"Test Accuracy score is: {test_data_accuracy_5 * 100:.2f}%")
+
+x_test_pred_6 = model6_GNB.predict(x_test)
+test_data_accuracy_6 = accuracy_score(y_test, x_test_pred_6)
+# print(f"Test Accuracy score is: {test_data_accuracy_6 * 100:.2f}%")
+
+x_test_pred_7 = model7_GBC.predict(x_test)
+test_data_accuracy_7 = accuracy_score(y_test, x_test_pred_7)
+# print(f"Test Accuracy score is: {test_data_accuracy_7 * 100:.2f}%")
+
+x_test_pred_8 = model8_XGB.predict(x_test)
+test_data_accuracy_8 = accuracy_score(y_test, x_test_pred_8)
+# print(f"Test Accuracy score is: {test_data_accuracy_8 * 100:.2f}%")
+
+# x_test_pred_9 = model9_LGBM.predict(x_test)
+# test_data_accuracy_9 = accuracy_score(y_test, x_test_pred_9)
+# print(f"Test Accuracy score is: {test_data_accuracy_9 * 100:.2f}%")
+
+x_test_pred_10 = model10_CBC.predict(x_test)
+test_data_accuracy_10 = accuracy_score(y_test, x_test_pred_10)
+# print(f"Test Accuracy score is: {test_data_accuracy_10 * 100:.2f}%")
+
+x_test_pred_11 = model11_ABC.predict(x_test)
+test_data_accuracy_11 = accuracy_score(y_test, x_test_pred_11)
+# print(f"Test Accuracy score is: {test_data_accuracy_11 * 100:.2f}%")
+
+x_test_pred_12 = model12_ETC.predict(x_test)
+test_data_accuracy_12 = accuracy_score(y_test, x_test_pred_12)
+# print(f"Test Accuracy score is: {test_data_accuracy_12 * 100:.2f}%")
