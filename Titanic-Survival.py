@@ -213,4 +213,4 @@ test_data_accuracy_11 = accuracy_score(y_test, x_test_pred_11)
 
 x_test_pred_12 = model12_ETC.predict(x_test)
 test_data_accuracy_12 = accuracy_score(y_test, x_test_pred_12)
-# print(f"Test Accuracy score is: {test_data_accuracy_12 * 100:.2f}%")
+print(f"Test Accuracy score is: {test_data_accuracy_12 * 100:.2f}%")
